@@ -1,0 +1,19 @@
+public class IsbodMain {
+
+  public static void main (String[] args) {
+    Isbod minIsbod = new Isbod();
+    minIsbod.nyAnsatt("Ibrar");
+    minIsbod.nyAnsatt("Anne");
+    minIsbod.nyAnsatt("Maria");
+    minIsbod.nyAnsatt("Bjørn");
+    minIsbod.nyAnsatt("Celine");
+    minIsbod.nyAnsatt("Nathalie");
+    minIsbod.nyAnsatt("Sarah");
+    minIsbod.nyAnsatt("Ola");
+    minIsbod.nyAnsatt("Geir");
+    minIsbod.nyAnsatt("Tom"); // Ansetter arbeidere
+    minIsbod.sparkSiste(); // Sparker dem som ble sist ansatt
+    minIsbod.nyAnsatt("Eline"); // Ansetter ny arbeider
+    minIsbod.printArbeidere(); // Printer ut arbeiderne
+  }
+}
