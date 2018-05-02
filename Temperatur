@@ -1,0 +1,23 @@
+import java.util.*;
+import java.io.*;
+public class Temperatur {
+  public static void main (String[] args) throws Exception {
+    Scanner fil = new Scanner (new File("temperatur.txt"));
+    String[] temperaturer = new String[12];
+    int teller1 = 0;
+    while (fil.hasNextLine()) {
+      temperaturer[teller1] = fil.nextLine();
+      teller1++;
+    } // While-løkke for å sette inn i array
+    int sum = 0;
+    int teller2 = 0;
+    for (int i = 0; i < temperaturer.length; i++) {
+      sum += Integer.valueOf(temperaturer[i].trim());
+      teller2++;
+    } // For-løkke for å finne gjennomsnitt
+    System.out.println("Temperaturene for 12 måneder: " + Arrays.toString(temperaturer));
+    System.out.println("Gjennomsnittet for hele året var " +
+    String.format("%.2f", (double) sum / teller2) + " grader.");
+    // For å printe ut array med alle månedene og printe ut gjennomsnitt for hele året
+  }
+}
