@@ -1,0 +1,36 @@
+public class Kalkulator {
+  static int addisjon (int tall1, int tall2) { // Addisjon metoden
+    int sum = tall1 + tall2; // Lager en int som finner summen av tallene
+    return sum; // Returnerer sum
+  }
+  static int subtraksjon (int tall1, int tall2) { // Subtraksjon metoden
+    int differanse = tall1 - tall2;
+    // Lager en int som finner differansen av tallene
+    return differanse; // Returnerer differansen
+  }
+  static int heltallsdivisjon (int tall1, int tall2) { // Heltallsdivisjon metoden
+    int kvotient = tall1 / tall2;
+    // Lager en int for å finne kvotienten av tallene i heltall
+    return kvotient; // Returnerer kvotienten
+  }
+  static double divisjon (double tall1, double tall2) { // Divisjon metoden
+    double kvotient = tall1 / tall2;
+    // Lager en double for å finne kvotienten av tallene i desimaltall
+    return kvotient; // Returnerer kvotienten
+  }
+  public static void main(String[] args) { // Main metoden
+    int addSvar = addisjon(3, 4);
+    System.out.println("3 + 4 = " + addSvar);
+
+    int subSvar = subtraksjon(5, 2);
+    System.out.println("5 - 2 = " + subSvar);
+
+    int helDivSvar = heltallsdivisjon(10, 3);
+    System.out.println("10 / 3 = " + helDivSvar);
+
+    double divSvar = divisjon(10, 3);
+    System.out.println("10 / 3 = " + divSvar);
+    /* Deklarasjoner for å sende inn to tall til metodene
+    også etter det for å printe ut svarene */
+  }
+}
