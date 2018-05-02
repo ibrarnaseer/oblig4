@@ -1,0 +1,29 @@
+public class Isbod {
+  private String[] arbeidere  = new String[10];
+  private int ansatt = 0; // Deklarasjoner
+
+  public void nyAnsatt(String navn) { // Metode for å ansette nye arbeidere
+    if (ansatt < 10) {
+      arbeidere [ansatt] = navn;
+      System.out.println(arbeidere [ansatt]+ " er nå ansatt nummer " + ansatt + "." + "\n");
+      ansatt++;
+    }
+    else {
+      System.out.println("Du kan ikke ansette flere arbeidere. Maksimalt å holde er 10.");
+    } // Ansetter folk så lenge det er mindre enn 10. Hvis det blir mer forteller den bruker
+  }
+  public void sparkSiste() { // Metode for å sparke siste ansatte
+    if (ansatt > 0) {
+    ansatt--;
+    System.out.println("\nSiste mann ble sparket."+"\n");
+  }
+}
+  public void printArbeidere() { // Metode som printer ut arbeiderne
+    System.out.println("\nDette er arbeiderne dine for øyeblikket:" + "\n");
+    for (int i = 0; i < ansatt; i++) {
+      System.out.print("- ");
+      System.out.println(arbeidere [i]);
+      // For å printe ut hele arrayet
+    }
+  }
+}
