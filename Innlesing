@@ -1,0 +1,20 @@
+import java.util.*;
+import java.io.*; // Importere diverse verktøy
+public class Innlesing {
+  public static void main(String[] args) throws Exception {
+    Scanner fil = new Scanner (new File("winnie.txt"));
+    Scanner in = new Scanner (System.in); // Deklarasjoner
+    System.out.println("Skriv inn ordet du vil lete etter:\n");
+    // Printer ut en melding
+    String ord = in.nextLine();
+    int teller = 0; // Deklarasjoner
+    while(fil.hasNextLine()){
+      String linje = fil.nextLine(); // While-løkke for å lese filen
+      if(ord.equalsIgnoreCase(linje)) {
+        teller++;
+      } // If-løkke for å sjekke om ordet finnes i filen
+    }
+    System.out.println("\nOrdet \"" + ord + "\" forekommer " + teller + " ganger i teksten.");
+    // Printer ut hvor mange ganger ordet kommer i teksten
+  }
+}
