@@ -1,0 +1,42 @@
+import java.util.*;
+import java.io.*;
+public class Valg {
+  public static void main(String[] args) throws Exception {
+    Scanner fil = new Scanner (new File("stemmer.txt"));
+    String[] stemmer = new String [456];
+    int[] parti = new int [4];
+    int teller = 0;
+    while (fil.hasNextLine()) {
+      stemmer[teller] = fil.nextLine();
+
+      if (stemmer[teller].equalsIgnoreCase("ap")) {
+        parti[0]++;
+      }
+      else if (stemmer[teller].equalsIgnoreCase("krf")) {
+        parti[1]++;
+      }
+      else if (stemmer[teller].equalsIgnoreCase("sp")) {
+        parti[2]++;
+      }
+      else if (stemmer[teller].equalsIgnoreCase("h")) {
+        parti[3]++;
+      }
+      teller++;
+    } // While-løkke for å telle stemmer på partiene
+    teller = 0; // Setter teller tilbake til 0
+    int sjekk = 0;
+    int vinner = 0;
+    while (teller < 4) {
+      if (sjekk < parti[teller]) {
+        sjekk = parti[teller];
+        vinner = teller;
+      }
+      teller++;
+    } // While-løkke for å finne vinner av valget
+    int prosent = (parti[vinner]*100)/456; // Int for å finne prosentverdi
+    String[] partiNavn = {"Arbeiderpartiet", "Kristelig Folkeparti", "Senterpartiet", "Hoyre"};
+    // String array for at navnet skal komme opp i stedet for "159"
+    System.out.println(partiNavn[vinner] + " vant valget med " + prosent + "% av stemmene");
+    // Printer ut vinneren med prosenten
+  }
+}
